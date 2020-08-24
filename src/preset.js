@@ -11,8 +11,8 @@ module.exports = Preset.make('Igniter')
     .if(({ flags, prompts }) => Boolean(flags.schema) || Boolean(prompts.schema))
     .title('Set Schema default length')
     .search(/use Illuminate\\Support\\ServiceProvider;/)
-			.addBefore('use Illuminate\\Support\\Facades\\Schema;')
-			.end()
+      .addBefore('use Illuminate\\Support\\Facades\\Schema;')
+      .end()
     .search(/public function boot\(\)/)
       .addAfter([
         `{`,
