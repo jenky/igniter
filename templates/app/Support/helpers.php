@@ -3,8 +3,6 @@
 use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Str;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 if (! function_exists('array_key_by')) {
     /**
@@ -45,33 +43,6 @@ if (! function_exists('datetime')) {
         }
 
         return $datetime;
-    }
-}
-
-if (! function_exists('random_filename')) {
-    /**
-     * Generate random filename.
-     *
-     * @param  mixed $file
-     * @param  int $length
-     * @param  \Closure|null
-     * @return string
-     */
-    function random_filename($file, int $length = 20, Closure $closure = null): string
-    {
-        if ($file instanceof UploadedFile) {
-            $extension = $file->getClientOriginalExtension();
-        } else {
-            $extension = pathinfo($file, PATHINFO_EXTENSION);
-        }
-
-        $name = Str::random($length);
-
-        if ($closure) {
-            $name = $closure($name);
-        }
-
-        return $name.'.'.$extension;
     }
 }
 
