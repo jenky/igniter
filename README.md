@@ -14,6 +14,6 @@
     <code>use-preset</code> is a scaffolding tool for developers. <a href="https://docs.usepreset.dev/">Read the documentation</a> for more information.
   </p>
   <br />
-  <pre align="center">npx use-preset jenky/lineup</pre>
+  <pre align="center">npx use-preset jenky/igniter</pre>
   &nbsp;
 <p>
