@@ -78,7 +78,6 @@ module.exports = Preset.make('Igniter')
     .for('node')
     .title('Install Node dependencies')
     .chain()
-
   .updateDependencies()
     .if(({ flags }) => Boolean(flags.interaction))
     .for('php')
