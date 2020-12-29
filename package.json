@@ -1,14 +1,10 @@
 {
-    "name": "lineup",
+    "name": "igniter",
     "license": "MIT",
     "preset": "src/preset.js",
     "version": "0.0.0",
     "private": "true",
     "devDependencies": {
-        "use-preset": "^0",
-        "standard-version": "^8.0.2"
-    },
-    "scripts": {
-        "release": "standard-version --skip.changelog"
+        "apply": "^0.2"
     }
 }
