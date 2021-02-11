@@ -9,8 +9,8 @@ if (! function_exists('array_key_by')) {
      * Replace root array key with child array key.
      * Note that the specified key must exist in the query result, or it will be ignored.
      *
-     * @param  array $data
-     * @param  string $key
+     * @param  array  $data
+     * @param  string  $key
      * @return array
      */
     function array_key_by(array $data, string $key): array
@@ -29,20 +29,13 @@ if (! function_exists('datetime')) {
     /**
      * Parse datetime with Carbon.
      *
-     * @param  mixed $time
-     * @param  \DateTimeZone|string|array|null $tz
+     * @param  mixed  $time
+     * @param  string|null  $format
      * @return \Carbon\Carbon
      */
-    function datetime($time = null, $tz = null): Carbon
+    function datetime($time = null, ?string $format = null): Carbon
     {
-        if (is_array($time)) {
-            [$format, $time] = $time;
-            $datetime = Carbon::createFromFormat($format, $time, $tz);
-        } else {
-            $datetime = Carbon::parse($time, $tz);
-        }
-
-        return $datetime;
+        return $format ? Carbon::createFromFormat($format, $time) : Carbon::parse($time);
     }
 }
 
@@ -50,8 +43,8 @@ if (! function_exists('page_title')) {
     /**
      * Set the page title.
      *
-     * @param  string $title
-     * @param  string $delimiter
+     * @param  string  $title
+     * @param  string  $delimiter
      * @return string
      */
     function page_title(string $title, string $delimiter = '|'): string
@@ -64,14 +57,14 @@ if (! function_exists('active_route')) {
     /**
      * Return the "active" class if current route is matched.
      *
-     * @param  string|array $route
-     * @param  string $class
+     * @param  string|array  $route
+     * @param  string  $class
      * @return string
      */
     function active_route($route, string $class = 'active'): string
     {
-        $route = Arr::wrap($route);
+        $routes = Arr::wrap($route);
 
-        return Route::is(...$route) ? $class : '';
+        return Route::is(...$routes) ? $class : '';
     }
 }
