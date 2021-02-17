@@ -53,12 +53,12 @@ Preset.editJson('package.json')
   .withTitle('Setup Node dependencies')
   .merge({
     dependencies: {
-      axios: '^0.19',
-      lodash: '^4.17.13'
+      axios: '^0.21',
+      lodash: '^4.17.19'
     },
     devDependencies: {
-      husky: '^4.2.5',
-      'lint-staged': '^10.2.5'
+      husky: '^4.3.5',
+      'lint-staged': '^10.5.1'
     },
     husky: {
       hooks: {
