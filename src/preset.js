@@ -57,13 +57,8 @@ Preset.editJson('package.json')
       lodash: '^4.17.19'
     },
     devDependencies: {
-      husky: '^4.3.5',
+      husky: '^6.0.0',
       'lint-staged': '^10.5.1'
-    },
-    husky: {
-      hooks: {
-        'pre-commit': 'lint-staged'
-      }
     },
     'lint-staged': {
       '*.php': 'php ./vendor/bin/php-cs-fixer fix --config .php_cs'
@@ -81,6 +76,12 @@ Preset.edit('config/logging.php')
 Preset.installDependencies('node')
   .ifUserApproves()
   .withTitle('Install Node dependencies')
+
+Preset.execute('npx', 'husky', 'install')
+  .execute('npm', 'set-script', 'preapre', '"husky install')
+  .withTitle('Install Husky')
+
+Preset.execute('npx', 'husky', 'add', '.husky/pre-commit', '"npx lint-staged"')
 
 Preset.installDependencies('php')
   .ifUserApproves()
