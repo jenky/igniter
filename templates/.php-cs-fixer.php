@@ -13,7 +13,7 @@ $finder = PhpCsFixer\Finder::create()
     ->ignoreDotFiles(true)
     ->ignoreVCS(true);
 
-return PhpCsFixer\Config::create()
+return (new PhpCsFixer\Config)
     ->setCacheFile(__DIR__.'/.php_cs.cache')
     ->setRules([
         '@PSR12' => true,

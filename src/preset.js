@@ -61,7 +61,7 @@ Preset.editJson('package.json')
       'lint-staged': '^10.5.1'
     },
     'lint-staged': {
-      '*.php': 'php ./vendor/bin/php-cs-fixer fix --config .php_cs'
+      '*.php': 'php ./vendor/bin/php-cs-fixer fix --config .php-cs-fixer.php'
     }
   })
 
