@@ -16,7 +16,7 @@ $finder = PhpCsFixer\Finder::create()
 return PhpCsFixer\Config::create()
     ->setCacheFile(__DIR__.'/.php_cs.cache')
     ->setRules([
-        '@PSR2' => true,
+        '@PSR12' => true,
         'align_multiline_comment' => true,
         'array_indentation' => true,
         'array_syntax' => ['syntax' => 'short'],
