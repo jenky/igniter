@@ -21,7 +21,7 @@ Preset.group(preset => {
 Preset.editPhpPackages()
   .withTitle('Setup Composer dependencies')
   .add('doctrine/dbal', '^3.1')
-  .addDev('friendsofphp/php-cs-fixer', '^2.18')
+  .addDev('friendsofphp/php-cs-fixer', '^3.1')
   .set('autoload.files', ['app/Support/helpers.php'])
 
 // Preset.group(preset => {
