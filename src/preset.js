@@ -78,7 +78,7 @@ Preset.installDependencies('node')
   .withTitle('Install Node dependencies')
 
 Preset.execute('npx', 'husky', 'install')
-  .execute('npm', 'set-script', 'preapre', '"husky install')
+Preset.execute('npm', 'set-script', 'preapre', '"husky install')
   .withTitle('Install Husky')
 
 Preset.execute('npx', 'husky', 'add', '.husky/pre-commit', '"npx lint-staged"')
