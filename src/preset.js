@@ -67,7 +67,7 @@ Preset.editJson('package.json')
 
 Preset.edit('.gitignore')
   .withTitle('Update .gitignore')
-  .addAfter('.phpunit.result.cache', '.php_cs.cache')
+  .addAfter('.phpunit.result.cache', '.php-cs-fixer.cache')
 
 Preset.edit('config/logging.php')
   .update(content => content.replace(`['single']`, `['daily']`))
